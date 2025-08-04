@@ -1,0 +1,21 @@
+[build]
+  command = "npx vite build --config vite.config.prod.ts"
+  functions = "netlify/functions"
+  publish = "dist/spa"
+
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
+
+# SPA fallback - this must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
