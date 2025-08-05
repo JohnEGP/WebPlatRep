@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
+import Calendar from "./pages/Calendar";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
