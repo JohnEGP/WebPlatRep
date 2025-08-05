@@ -3,6 +3,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import Calendar from "./pages/Calendar";
+import Stock from "./pages/Stock";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
