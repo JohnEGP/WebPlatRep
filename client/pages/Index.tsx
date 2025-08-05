@@ -84,23 +84,58 @@ export default function Index() {
 
         <div className="mt-8 bg-card p-6 rounded-lg border">
           <h2 className="text-2xl font-semibold text-card-foreground mb-4">
-            Getting Started
+            PrintCRM - Marketing & Digital Printing Management
           </h2>
           <div className="space-y-4 text-muted-foreground">
             <p>
-              Welcome to your Fusion Starter application! This template includes:
+              Welcome to your comprehensive CRM system for marketing and digital printing operations!
             </p>
-            <ul className="list-disc list-inside space-y-2">
-              <li>React 18 with TypeScript</li>
-              <li>React Router 6 for SPA routing</li>
-              <li>Express server with API endpoints</li>
-              <li>TailwindCSS for styling</li>
-              <li>Radix UI components</li>
-              <li>Shared types between client and server</li>
-            </ul>
-            <p>
-              Check the <code className="bg-muted px-2 py-1 rounded">AGENTS.md</code> file for more information about the project structure and how to add new features.
-            </p>
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
+              <div>
+                <h3 className="font-semibold text-card-foreground mb-2">🎯 Project Management</h3>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Track projects through multiple status stages</li>
+                  <li>Comprehensive timeline and milestone tracking</li>
+                  <li>Team assignment and collaboration tools</li>
+                  <li>Client communication management</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-card-foreground mb-2">💰 Dynamic Budget Management</h3>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Real-time budget tracking and updates</li>
+                  <li>Cost breakdown by category</li>
+                  <li>Material cost integration</li>
+                  <li>Profit margin analysis</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-card-foreground mb-2">📦 Smart Stock Management</h3>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Multi-unit inventory tracking</li>
+                  <li>Automatic low stock alerts</li>
+                  <li>Supplier management</li>
+                  <li>Material usage analytics</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-card-foreground mb-2">📅 Advanced Calendar System</h3>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Project deadline visualization</li>
+                  <li>Timeline view with milestones</li>
+                  <li>Team scheduling</li>
+                  <li>Production planning</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t">
+              <a
+                href="/dashboard"
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+              >
+                Access CRM Dashboard →
+              </a>
+            </div>
           </div>
         </div>
       </div>
