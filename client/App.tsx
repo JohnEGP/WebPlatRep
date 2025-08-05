@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -7,6 +8,14 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/projects" element={<div>Projects (Coming Soon)</div>} />
+        <Route path="/calendar" element={<div>Calendar (Coming Soon)</div>} />
+        <Route path="/users" element={<div>Users (Coming Soon)</div>} />
+        <Route path="/stock" element={<div>Stock (Coming Soon)</div>} />
+        <Route path="/budgets" element={<div>Budgets (Coming Soon)</div>} />
+        <Route path="/reports" element={<div>Reports (Coming Soon)</div>} />
+        <Route path="/settings" element={<div>Settings (Coming Soon)</div>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
