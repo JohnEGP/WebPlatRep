@@ -11,6 +11,7 @@ This application is pre-configured for one-click deployment to Netlify with serv
 ## ✨ Features
 
 ### 📊 **Project Management**
+
 - Multi-status tracking (To Do, On Going, Pending Approval, Completed)
 - Priority levels with visual indicators
 - Progress tracking with milestone management
@@ -19,6 +20,7 @@ This application is pre-configured for one-click deployment to Netlify with serv
 - Advanced filtering and search
 
 ### 📅 **Calendar & Timeline**
+
 - Monthly calendar view with color-coded events
 - Project timeline visualization
 - Milestone tracking
@@ -26,6 +28,7 @@ This application is pre-configured for one-click deployment to Netlify with serv
 - Upcoming events preview
 
 ### 📦 **Smart Stock Management**
+
 - Multiple measurement units (m², units, length, weight, volume)
 - 14 different unit types for diverse materials
 - Low stock alerts and out-of-stock tracking
@@ -34,6 +37,7 @@ This application is pre-configured for one-click deployment to Netlify with serv
 - Real-time inventory value calculation
 
 ### 💰 **Budget Management** (Ready for Implementation)
+
 - Dynamic budget tracking
 - Material cost integration
 - Real-time cost calculations
@@ -41,6 +45,7 @@ This application is pre-configured for one-click deployment to Netlify with serv
 - Multi-currency support
 
 ### 🎨 **Modern UI/UX**
+
 - Responsive design for all devices
 - Professional dark/light theme support
 - Intuitive navigation with role-based access
@@ -79,11 +84,13 @@ shared/                 # Shared TypeScript types
 ## 🚀 Deployment Options
 
 ### Option 1: Automatic Netlify Deployment
+
 1. Fork this repository
 2. Connect to Netlify
 3. Deploy automatically with pre-configured settings
 
 ### Option 2: Manual Netlify Deployment
+
 ```bash
 # Install dependencies
 npm install
@@ -96,6 +103,7 @@ netlify deploy --prod --dir=dist/spa
 ```
 
 ### Option 3: Local Development
+
 ```bash
 # Install dependencies
 npm install
@@ -109,13 +117,16 @@ npm run dev
 ## 📋 Environment Setup
 
 ### Required Files
+
 - ✅ `netlify.toml` - Netlify configuration
 - ✅ `.nvmrc` - Node.js version specification
 - ✅ `package.json` - Dependencies and scripts
 - ✅ API functions in `netlify/functions/`
 
 ### Environment Variables (Optional)
+
 Set these in Netlify dashboard for production:
+
 - `NODE_ENV=production`
 - Any database connection strings
 - API keys for external services
@@ -133,6 +144,7 @@ npm test          # Run tests
 ## 📊 CRM Features Overview
 
 ### Dashboard
+
 - Real-time project statistics
 - Revenue tracking
 - Team utilization metrics
@@ -140,6 +152,7 @@ npm test          # Run tests
 - Upcoming deadlines
 
 ### Projects
+
 - Create and manage printing projects
 - Track through completion stages
 - Assign team members
@@ -147,6 +160,7 @@ npm test          # Run tests
 - Client communication
 
 ### Calendar
+
 - Visual project scheduling
 - Milestone tracking
 - Event management
@@ -154,6 +168,7 @@ npm test          # Run tests
 - Deadline monitoring
 
 ### Stock
+
 - Multi-unit inventory tracking
 - Supplier management
 - Location tracking
@@ -163,6 +178,7 @@ npm test          # Run tests
 ## 🤝 Contributing
 
 This CRM is designed for marketing and digital printing operations. Contributions are welcome for:
+
 - Additional measurement units
 - Enhanced reporting features
 - Integration with printing equipment

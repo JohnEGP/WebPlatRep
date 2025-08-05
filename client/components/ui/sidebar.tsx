@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils"
-import { Button } from "./button"
+import { cn } from "@/lib/utils";
+import { Button } from "./button";
 import {
   Calendar,
   FolderOpen,
@@ -12,13 +12,13 @@ import {
   Bell,
   Search,
   Menu,
-  X
-} from "lucide-react"
-import { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
+  X,
+} from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 interface SidebarProps {
-  className?: string
+  className?: string;
 }
 
 const sidebarItems = [
@@ -30,18 +30,20 @@ const sidebarItems = [
   { icon: DollarSign, label: "Budgets", href: "/budgets" },
   { icon: BarChart3, label: "Reports", href: "/reports" },
   { icon: Settings, label: "Settings", href: "/settings" },
-]
+];
 
 export function Sidebar({ className }: SidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false)
-  const location = useLocation()
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const location = useLocation();
 
   return (
-    <div className={cn(
-      "flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300",
-      isCollapsed ? "w-16" : "w-64",
-      className
-    )}>
+    <div
+      className={cn(
+        "flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300",
+        isCollapsed ? "w-16" : "w-64",
+        className,
+      )}
+    >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
         {!isCollapsed && (
@@ -55,16 +57,20 @@ export function Sidebar({ className }: SidebarProps) {
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="text-sidebar-foreground hover:bg-sidebar-accent"
         >
-          {isCollapsed ? <Menu className="h-4 w-4" /> : <X className="h-4 w-4" />}
+          {isCollapsed ? (
+            <Menu className="h-4 w-4" />
+          ) : (
+            <X className="h-4 w-4" />
+          )}
         </Button>
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 p-2 space-y-1">
         {sidebarItems.map((item) => {
-          const isActive = location.pathname === item.href
-          const Icon = item.icon
-          
+          const isActive = location.pathname === item.href;
+          const Icon = item.icon;
+
           return (
             <Link key={item.href} to={item.href}>
               <Button
@@ -72,14 +78,15 @@ export function Sidebar({ className }: SidebarProps) {
                 className={cn(
                   "w-full justify-start text-sidebar-foreground hover:bg-sidebar-accent",
                   isCollapsed && "px-2",
-                  isActive && "bg-sidebar-accent text-sidebar-accent-foreground"
+                  isActive &&
+                    "bg-sidebar-accent text-sidebar-accent-foreground",
                 )}
               >
                 <Icon className="h-4 w-4" />
                 {!isCollapsed && <span className="ml-2">{item.label}</span>}
               </Button>
             </Link>
-          )
+          );
         })}
       </nav>
 
@@ -104,5 +111,5 @@ export function Sidebar({ className }: SidebarProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

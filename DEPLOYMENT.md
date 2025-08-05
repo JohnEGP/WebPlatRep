@@ -5,7 +5,7 @@ This CRM application is configured for deployment on Netlify with serverless fun
 ## Automatic Deployment
 
 1. **Push to GitHub**: Ensure your code is in a GitHub repository
-2. **Connect to Netlify**: 
+2. **Connect to Netlify**:
    - Go to [Netlify](https://netlify.com)
    - Click "New site from Git"
    - Connect your GitHub repository
@@ -57,12 +57,14 @@ If you need to add environment variables for production:
 ## API Endpoints
 
 After deployment, your API will be available at:
+
 - `https://your-site.netlify.app/api/ping`
 - `https://your-site.netlify.app/api/demo`
 
 ## Troubleshooting
 
 If you encounter issues:
+
 1. Check the Netlify build logs
 2. Ensure all dependencies are in the correct sections of `package.json`
 3. Verify the function is deploying correctly
@@ -71,6 +73,7 @@ If you encounter issues:
 ## Performance
 
 The deployed site will have:
+
 - ⚡ **Fast loading** via Netlify CDN
 - 🌍 **Global distribution**
 - 🔧 **Automatic HTTPS**

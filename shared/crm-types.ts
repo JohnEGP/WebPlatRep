@@ -10,7 +10,13 @@ export interface User {
   updatedAt: string;
 }
 
-export type UserRole = 'admin' | 'manager' | 'designer' | 'printer' | 'sales' | 'viewer';
+export type UserRole =
+  | "admin"
+  | "manager"
+  | "designer"
+  | "printer"
+  | "sales"
+  | "viewer";
 
 // Project Management Types
 export interface Project {
@@ -32,8 +38,13 @@ export interface Project {
   completedAt?: string;
 }
 
-export type ProjectStatus = 'todo' | 'ongoing' | 'pending_approval' | 'completed' | 'cancelled';
-export type ProjectPriority = 'low' | 'medium' | 'high' | 'urgent';
+export type ProjectStatus =
+  | "todo"
+  | "ongoing"
+  | "pending_approval"
+  | "completed"
+  | "cancelled";
+export type ProjectPriority = "low" | "medium" | "high" | "urgent";
 
 export interface ProjectTimeline {
   startDate: string;
@@ -73,7 +84,13 @@ export interface BudgetItem {
   materialId?: string; // Reference to stock material
 }
 
-export type BudgetCategory = 'design' | 'printing' | 'materials' | 'labor' | 'equipment' | 'other';
+export type BudgetCategory =
+  | "design"
+  | "printing"
+  | "materials"
+  | "labor"
+  | "equipment"
+  | "other";
 
 // Stock Management Types
 export interface StockMaterial {
@@ -92,7 +109,15 @@ export interface StockMaterial {
   expiryDate?: string;
 }
 
-export type MaterialCategory = 'paper' | 'ink' | 'vinyl' | 'fabric' | 'plastic' | 'metal' | 'tools' | 'other';
+export type MaterialCategory =
+  | "paper"
+  | "ink"
+  | "vinyl"
+  | "fabric"
+  | "plastic"
+  | "metal"
+  | "tools"
+  | "other";
 
 export interface MeasurementUnit {
   type: UnitType;
@@ -101,7 +126,7 @@ export interface MeasurementUnit {
   baseConversion?: number; // For converting to base unit
 }
 
-export type UnitType = 'area' | 'length' | 'volume' | 'weight' | 'count';
+export type UnitType = "area" | "length" | "volume" | "weight" | "count";
 
 export interface Supplier {
   id: string;
@@ -135,7 +160,13 @@ export interface CalendarEvent {
   color: string;
 }
 
-export type EventType = 'project_deadline' | 'meeting' | 'production' | 'delivery' | 'approval' | 'other';
+export type EventType =
+  | "project_deadline"
+  | "meeting"
+  | "production"
+  | "delivery"
+  | "approval"
+  | "other";
 
 // File Management Types
 export interface Attachment {
@@ -208,4 +239,10 @@ export interface Notification {
   actionUrl?: string;
 }
 
-export type NotificationType = 'project_update' | 'deadline_reminder' | 'approval_request' | 'stock_alert' | 'budget_alert' | 'system';
+export type NotificationType =
+  | "project_update"
+  | "deadline_reminder"
+  | "approval_request"
+  | "stock_alert"
+  | "budget_alert"
+  | "system";
