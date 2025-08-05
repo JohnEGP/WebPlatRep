@@ -12,7 +12,7 @@ export default function App() {
         <Route path="/" element={<Index />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/calendar" element={<div>Calendar (Coming Soon)</div>} />
+        <Route path="/calendar" element={<Calendar />} />
         <Route path="/users" element={<div>Users (Coming Soon)</div>} />
         <Route path="/stock" element={<div>Stock (Coming Soon)</div>} />
         <Route path="/budgets" element={<div>Budgets (Coming Soon)</div>} />
