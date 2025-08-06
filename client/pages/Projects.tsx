@@ -243,7 +243,7 @@ export default function Projects() {
       title="Projects"
       subtitle={`Managing ${projects.length} projects across all stages`}
       actions={
-        <Button>
+        <Button onClick={() => setIsNewProjectModalOpen(true)}>
           <Plus className="h-4 w-4 mr-2" />
           New Project
         </Button>
