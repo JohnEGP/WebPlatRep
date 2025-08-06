@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CRMLayout } from "@/components/layout/crm-layout";
+import NewProjectModal from "@/components/NewProjectModal";
 import {
   Card,
   CardContent,
