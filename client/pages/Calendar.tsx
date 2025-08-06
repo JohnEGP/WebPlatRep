@@ -341,8 +341,19 @@ export default function Calendar() {
                       </span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {formatDate(project.timeline!.startDate)} -{" "}
-                      {formatDate(project.timeline!.estimatedEndDate)}
+                      <span
+                        className="cursor-pointer hover:text-primary underline"
+                        onClick={(e) => handleDateClick(new Date(project.timeline!.startDate), e)}
+                      >
+                        {formatDate(project.timeline!.startDate)}
+                      </span>
+                      {" - "}
+                      <span
+                        className="cursor-pointer hover:text-primary underline"
+                        onClick={(e) => handleDateClick(new Date(project.timeline!.estimatedEndDate), e)}
+                      >
+                        {formatDate(project.timeline!.estimatedEndDate)}
+                      </span>
                     </p>
 
                     {/* Milestones */}
