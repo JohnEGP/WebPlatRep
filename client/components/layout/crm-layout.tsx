@@ -1,7 +1,9 @@
 import { Sidebar } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import { Bell, Search, User } from "lucide-react";
+import NotificationDropdown from "@/components/NotificationDropdown";
+import { Search, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 interface CRMLayoutProps {
   children: React.ReactNode;
