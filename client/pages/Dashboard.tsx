@@ -267,6 +267,12 @@ export default function Dashboard() {
           </Card>
         </div>
       </div>
+
+      <NewProjectModal
+        isOpen={isNewProjectModalOpen}
+        onClose={() => setIsNewProjectModalOpen(false)}
+        onSubmit={handleNewProject}
+      />
     </CRMLayout>
   );
 }
