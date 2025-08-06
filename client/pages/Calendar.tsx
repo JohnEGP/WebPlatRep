@@ -281,12 +281,13 @@ export default function Calendar() {
             return (
               <div
                 key={index}
-                className={`h-24 p-1 border rounded-md bg-card hover:bg-accent transition-colors ${
+                className={`h-24 p-1 border rounded-md bg-card hover:bg-accent transition-colors cursor-pointer ${
                   isToday ? "border-primary bg-primary/5" : "border-border"
                 }`}
+                onClick={(e) => handleDateClick(date, e)}
               >
                 <div
-                  className={`text-sm font-medium mb-1 ${isToday ? "text-primary" : "text-foreground"}`}
+                  className={`text-sm font-medium mb-1 hover:text-primary transition-colors ${isToday ? "text-primary" : "text-foreground"}`}
                 >
                   {date.getDate()}
                 </div>
