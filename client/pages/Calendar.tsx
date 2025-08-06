@@ -208,6 +208,21 @@ export default function Calendar() {
     }
   };
 
+  const handleDateClick = (date: Date, event: React.MouseEvent) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setDatePickerPosition({
+      x: rect.left,
+      y: rect.bottom + 5,
+    });
+    setCurrentDate(date);
+    setShowDatePicker(true);
+  };
+
+  const handleDatePickerChange = (newDate: Date) => {
+    setCurrentDate(newDate);
+    setShowDatePicker(false);
+  };
+
   const renderMonthView = () => (
     <Card>
       <CardHeader>
