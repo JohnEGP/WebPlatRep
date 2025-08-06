@@ -76,6 +76,12 @@ const lowStockItems = [
 ];
 
 export default function Dashboard() {
+  const [isNewProjectModalOpen, setIsNewProjectModalOpen] = useState(false);
+
+  const handleNewProject = (projectData: Partial<Project>) => {
+    console.log("New project created:", projectData);
+    // You can add logic here to save the project, update state, show notifications, etc.
+  };
   return (
     <CRMLayout
       title="Dashboard"
