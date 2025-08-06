@@ -158,6 +158,8 @@ export default function Calendar() {
   );
   const [events] = useState<CalendarEvent[]>(mockEvents);
   const [projects] = useState<Partial<Project>[]>(mockProjects);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [datePickerPosition, setDatePickerPosition] = useState({ x: 0, y: 0 });
 
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
