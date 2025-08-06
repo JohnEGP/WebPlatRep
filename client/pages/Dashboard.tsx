@@ -87,7 +87,7 @@ export default function Dashboard() {
       title="Dashboard"
       subtitle="Marketing & Digital Printing Department"
       actions={
-        <Button>
+        <Button onClick={() => setIsNewProjectModalOpen(true)}>
           <Plus className="h-4 w-4 mr-2" />
           New Project
         </Button>
