@@ -226,7 +226,7 @@ export default function Projects() {
       ...projectData,
     } as Project;
 
-    setProjects(prev => [newProject, ...prev]);
+    setProjects((prev) => [newProject, ...prev]);
   };
 
   const filteredProjects = projects.filter((project) => {
@@ -394,7 +394,10 @@ export default function Projects() {
           <p className="text-muted-foreground">
             No projects found matching your criteria.
           </p>
-          <Button className="mt-4" onClick={() => setIsNewProjectModalOpen(true)}>
+          <Button
+            className="mt-4"
+            onClick={() => setIsNewProjectModalOpen(true)}
+          >
             <Plus className="h-4 w-4 mr-2" />
             Create New Project
           </Button>

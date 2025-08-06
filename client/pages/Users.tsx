@@ -30,7 +30,8 @@ const mockUsers: UserType[] = [
     email: "ana.silva@company.pt",
     role: "designer",
     department: "Design",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b5f1?w=150&h=150&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b5f1?w=150&h=150&fit=crop&crop=face",
     createdAt: "2023-01-15T00:00:00Z",
     updatedAt: "2024-01-01T00:00:00Z",
   },
@@ -40,7 +41,8 @@ const mockUsers: UserType[] = [
     email: "carlos.santos@company.pt",
     role: "printer",
     department: "Production",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     createdAt: "2023-02-01T00:00:00Z",
     updatedAt: "2024-01-01T00:00:00Z",
   },
@@ -50,7 +52,8 @@ const mockUsers: UserType[] = [
     email: "sofia.costa@company.pt",
     role: "manager",
     department: "Management",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     createdAt: "2023-01-01T00:00:00Z",
     updatedAt: "2024-01-01T00:00:00Z",
   },
@@ -60,7 +63,8 @@ const mockUsers: UserType[] = [
     email: "joao.peixoto@company.pt",
     role: "sales",
     department: "Sales",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     createdAt: "2023-03-10T00:00:00Z",
     updatedAt: "2024-01-01T00:00:00Z",
   },
@@ -70,7 +74,8 @@ const mockUsers: UserType[] = [
     email: "mariana.oliveira@company.pt",
     role: "admin",
     department: "IT",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
     createdAt: "2023-01-01T00:00:00Z",
     updatedAt: "2024-01-01T00:00:00Z",
   },
@@ -105,7 +110,7 @@ function UserModal({ isOpen, onClose, onSubmit, user }: UserModalProps) {
   const [formData, setFormData] = useState({
     name: user?.name || "",
     email: user?.email || "",
-    role: user?.role || "viewer" as UserRole,
+    role: user?.role || ("viewer" as UserRole),
     department: user?.department || "",
   });
 
@@ -131,11 +136,15 @@ function UserModal({ isOpen, onClose, onSubmit, user }: UserModalProps) {
 
         <div className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-2">Nome Completo *</label>
+            <label className="block text-sm font-medium mb-2">
+              Nome Completo *
+            </label>
             <input
               type="text"
               value={formData.name}
-              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, name: e.target.value }))
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Ex: João Silva"
             />
@@ -146,7 +155,9 @@ function UserModal({ isOpen, onClose, onSubmit, user }: UserModalProps) {
             <input
               type="email"
               value={formData.email}
-              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, email: e.target.value }))
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="joao.silva@empresa.pt"
             />
@@ -156,7 +167,12 @@ function UserModal({ isOpen, onClose, onSubmit, user }: UserModalProps) {
             <label className="block text-sm font-medium mb-2">Função *</label>
             <select
               value={formData.role}
-              onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value as UserRole }))}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  role: e.target.value as UserRole,
+                }))
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {Object.entries(roleLabels).map(([value, label]) => (
@@ -168,11 +184,15 @@ function UserModal({ isOpen, onClose, onSubmit, user }: UserModalProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2">Departamento</label>
+            <label className="block text-sm font-medium mb-2">
+              Departamento
+            </label>
             <input
               type="text"
               value={formData.department}
-              onChange={(e) => setFormData(prev => ({ ...prev, department: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, department: e.target.value }))
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Ex: Design, Produção, Vendas"
             />
@@ -218,26 +238,26 @@ export default function Users() {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     } as UserType;
-    
-    setUsers(prev => [newUser, ...prev]);
+
+    setUsers((prev) => [newUser, ...prev]);
   };
 
   const handleEditUser = (userData: Partial<UserType>) => {
     if (!editingUser) return;
-    
-    setUsers(prev => 
-      prev.map(user => 
-        user.id === editingUser.id 
+
+    setUsers((prev) =>
+      prev.map((user) =>
+        user.id === editingUser.id
           ? { ...user, ...userData, updatedAt: new Date().toISOString() }
-          : user
-      )
+          : user,
+      ),
     );
     setEditingUser(null);
   };
 
   const handleDeleteUser = (userId: string) => {
     if (confirm("Tem certeza que deseja remover este utilizador?")) {
-      setUsers(prev => prev.filter(user => user.id !== userId));
+      setUsers((prev) => prev.filter((user) => user.id !== userId));
     }
   };
 
@@ -351,7 +371,9 @@ export default function Users() {
               </div>
 
               <div className="mt-3">
-                <span className={`px-2 py-1 text-xs rounded-full ${roleColors[user.role]}`}>
+                <span
+                  className={`px-2 py-1 text-xs rounded-full ${roleColors[user.role]}`}
+                >
                   {roleLabels[user.role]}
                 </span>
               </div>

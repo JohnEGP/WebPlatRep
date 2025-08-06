@@ -79,7 +79,7 @@ const mockMaterials: StockMaterial[] = [
     minStock: 50,
     maxStock: 500,
     unit: { type: "area", name: "Square Meters", abbreviation: "m²" },
-    unitPrice: 12.50,
+    unitPrice: 12.5,
     supplier: {
       id: "s3",
       name: "Banner Materials Ltd",
@@ -192,9 +192,7 @@ export default function NewProjectModal({
 
   const updateMaterial = (index: number, field: string, value: any) => {
     setSelectedMaterials((prev) =>
-      prev.map((item, i) =>
-        i === index ? { ...item, [field]: value } : item,
-      ),
+      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item)),
     );
   };
 
@@ -492,7 +490,8 @@ export default function NewProjectModal({
                       >
                         {mockMaterials.map((material) => (
                           <option key={material.id} value={material.id}>
-                            {material.name} - {material.unitPrice}€/{material.unit.abbreviation}
+                            {material.name} - {material.unitPrice}€/
+                            {material.unit.abbreviation}
                           </option>
                         ))}
                       </select>
@@ -502,7 +501,11 @@ export default function NewProjectModal({
                         type="number"
                         value={item.quantity}
                         onChange={(e) =>
-                          updateMaterial(index, "quantity", Number(e.target.value))
+                          updateMaterial(
+                            index,
+                            "quantity",
+                            Number(e.target.value),
+                          )
                         }
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Qtd"

@@ -343,14 +343,24 @@ export default function Calendar() {
                     <p className="text-sm text-muted-foreground mt-1">
                       <span
                         className="cursor-pointer hover:text-primary underline"
-                        onClick={(e) => handleDateClick(new Date(project.timeline!.startDate), e)}
+                        onClick={(e) =>
+                          handleDateClick(
+                            new Date(project.timeline!.startDate),
+                            e,
+                          )
+                        }
                       >
                         {formatDate(project.timeline!.startDate)}
                       </span>
                       {" - "}
                       <span
                         className="cursor-pointer hover:text-primary underline"
-                        onClick={(e) => handleDateClick(new Date(project.timeline!.estimatedEndDate), e)}
+                        onClick={(e) =>
+                          handleDateClick(
+                            new Date(project.timeline!.estimatedEndDate),
+                            e,
+                          )
+                        }
                       >
                         {formatDate(project.timeline!.estimatedEndDate)}
                       </span>
@@ -495,7 +505,7 @@ export default function Calendar() {
             className="fixed z-50"
             style={{
               left: `${datePickerPosition.x}px`,
-              top: `${datePickerPosition.y}px`
+              top: `${datePickerPosition.y}px`,
             }}
           >
             <DatePicker

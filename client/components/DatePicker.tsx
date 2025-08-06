@@ -8,9 +8,15 @@ interface DatePickerProps {
   onClose: () => void;
 }
 
-export default function DatePicker({ value, onChange, onClose }: DatePickerProps) {
+export default function DatePicker({
+  value,
+  onChange,
+  onClose,
+}: DatePickerProps) {
   const [currentDate, setCurrentDate] = useState(value || new Date());
-  const [viewDate, setViewDate] = useState(new Date(currentDate.getFullYear(), currentDate.getMonth(), 1));
+  const [viewDate, setViewDate] = useState(
+    new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
+  );
 
   const currentMonth = viewDate.getMonth();
   const currentYear = viewDate.getFullYear();
@@ -57,11 +63,7 @@ export default function DatePicker({ value, onChange, onClose }: DatePickerProps
     <div className="absolute z-50 bg-white border border-gray-200 rounded-lg shadow-lg p-4 min-w-[280px]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => navigateMonth("prev")}
-        >
+        <Button variant="ghost" size="sm" onClick={() => navigateMonth("prev")}>
           <ChevronLeft className="h-4 w-4" />
         </Button>
         <h3 className="font-semibold">
@@ -70,11 +72,7 @@ export default function DatePicker({ value, onChange, onClose }: DatePickerProps
             year: "numeric",
           })}
         </h3>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => navigateMonth("next")}
-        >
+        <Button variant="ghost" size="sm" onClick={() => navigateMonth("next")}>
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
@@ -106,8 +104,8 @@ export default function DatePicker({ value, onChange, onClose }: DatePickerProps
                 isToday(date)
                   ? "bg-blue-100 text-blue-600 font-semibold"
                   : isSelected(date)
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-700"
+                    ? "bg-blue-500 text-white"
+                    : "text-gray-700"
               }`}
             >
               {date.getDate()}

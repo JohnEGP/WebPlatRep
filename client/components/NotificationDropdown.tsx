@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, X, Calendar, AlertCircle, CheckCircle, Info } from "lucide-react";
+import {
+  Bell,
+  X,
+  Calendar,
+  AlertCircle,
+  CheckCircle,
+  Info,
+} from "lucide-react";
 import type { Notification, NotificationType } from "@shared/crm-types";
 
 // Mock notifications data
@@ -19,7 +26,8 @@ const mockNotifications: Notification[] = [
     id: "n2",
     type: "approval_request",
     title: "Aprovação Pendente",
-    message: "Menu do restaurante 'Bistro Central' aguarda aprovação do cliente",
+    message:
+      "Menu do restaurante 'Bistro Central' aguarda aprovação do cliente",
     userId: "current-user",
     read: false,
     createdAt: "2024-01-08T09:30:00Z",
@@ -61,11 +69,14 @@ interface NotificationDropdownProps {
   onNavigate: (url: string) => void;
 }
 
-export default function NotificationDropdown({ onNavigate }: NotificationDropdownProps) {
+export default function NotificationDropdown({
+  onNavigate,
+}: NotificationDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [notifications, setNotifications] = useState<Notification[]>(mockNotifications);
+  const [notifications, setNotifications] =
+    useState<Notification[]>(mockNotifications);
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const unreadCount = notifications.filter((n) => !n.read).length;
 
   const getNotificationIcon = (type: NotificationType) => {
     switch (type) {
@@ -87,8 +98,10 @@ export default function NotificationDropdown({ onNavigate }: NotificationDropdow
   const formatTime = (dateString: string) => {
     const date = new Date(dateString);
     const now = new Date();
-    const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
-    
+    const diffInMinutes = Math.floor(
+      (now.getTime() - date.getTime()) / (1000 * 60),
+    );
+
     if (diffInMinutes < 60) {
       return `${diffInMinutes}m atrás`;
     } else if (diffInMinutes < 1440) {
@@ -99,18 +112,18 @@ export default function NotificationDropdown({ onNavigate }: NotificationDropdow
   };
 
   const markAsRead = (notificationId: string) => {
-    setNotifications(prev =>
-      prev.map(notification =>
+    setNotifications((prev) =>
+      prev.map((notification) =>
         notification.id === notificationId
           ? { ...notification, read: true }
-          : notification
-      )
+          : notification,
+      ),
     );
   };
 
   const markAllAsRead = () => {
-    setNotifications(prev =>
-      prev.map(notification => ({ ...notification, read: true }))
+    setNotifications((prev) =>
+      prev.map((notification) => ({ ...notification, read: true })),
     );
   };
 
@@ -126,7 +139,7 @@ export default function NotificationDropdown({ onNavigate }: NotificationDropdow
 
   const removeNotification = (notificationId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    setNotifications(prev => prev.filter(n => n.id !== notificationId));
+    setNotifications((prev) => prev.filter((n) => n.id !== notificationId));
   };
 
   return (
@@ -152,7 +165,7 @@ export default function NotificationDropdown({ onNavigate }: NotificationDropdow
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          
+
           {/* Dropdown */}
           <div className="absolute right-0 top-12 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
             <div className="p-4 border-b border-gray-200 flex items-center justify-between">
@@ -192,9 +205,13 @@ export default function NotificationDropdown({ onNavigate }: NotificationDropdow
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between">
                             <div className="flex-1">
-                              <p className={`text-sm font-medium ${
-                                !notification.read ? "text-gray-900" : "text-gray-700"
-                              }`}>
+                              <p
+                                className={`text-sm font-medium ${
+                                  !notification.read
+                                    ? "text-gray-900"
+                                    : "text-gray-700"
+                                }`}
+                              >
                                 {notification.title}
                               </p>
                               <p className="text-sm text-gray-600 mt-1">
@@ -212,7 +229,9 @@ export default function NotificationDropdown({ onNavigate }: NotificationDropdow
                                 variant="ghost"
                                 size="icon"
                                 className="h-6 w-6"
-                                onClick={(e) => removeNotification(notification.id, e)}
+                                onClick={(e) =>
+                                  removeNotification(notification.id, e)
+                                }
                               >
                                 <X className="h-3 w-3" />
                               </Button>
