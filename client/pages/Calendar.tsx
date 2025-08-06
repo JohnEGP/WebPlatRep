@@ -483,6 +483,29 @@ export default function Calendar() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Date Picker */}
+      {showDatePicker && (
+        <>
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setShowDatePicker(false)}
+          />
+          <div
+            className="fixed z-50"
+            style={{
+              left: `${datePickerPosition.x}px`,
+              top: `${datePickerPosition.y}px`
+            }}
+          >
+            <DatePicker
+              value={currentDate}
+              onChange={handleDatePickerChange}
+              onClose={() => setShowDatePicker(false)}
+            />
+          </div>
+        </>
+      )}
     </CRMLayout>
   );
 }
