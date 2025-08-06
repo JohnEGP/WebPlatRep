@@ -212,12 +212,22 @@ const priorityOptions: { value: ProjectPriority; label: string }[] = [
 ];
 
 export default function Projects() {
-  const [projects] = useState<Project[]>(mockProjects);
+  const [projects, setProjects] = useState<Project[]>(mockProjects);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [statusFilter, setStatusFilter] = useState<ProjectStatus | "all">(
     "all",
   );
   const [searchTerm, setSearchTerm] = useState("");
+  const [isNewProjectModalOpen, setIsNewProjectModalOpen] = useState(false);
+
+  const handleNewProject = (projectData: Partial<Project>) => {
+    const newProject: Project = {
+      id: `project-${Date.now()}`,
+      ...projectData,
+    } as Project;
+
+    setProjects(prev => [newProject, ...prev]);
+  };
 
   const filteredProjects = projects.filter((project) => {
     const matchesStatus =
