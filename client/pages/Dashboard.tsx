@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { CRMLayout } from "@/components/layout/crm-layout";
+import NewProjectModal from "@/components/NewProjectModal";
 import {
   Card,
   CardContent,
@@ -20,6 +22,7 @@ import {
   Plus,
 } from "lucide-react";
 import { formatCurrency, getProjectStatusColor } from "@/lib/utils";
+import type { Project } from "@shared/crm-types";
 
 // Mock data for demonstration
 const dashboardStats = {
