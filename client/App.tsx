@@ -3,6 +3,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import Calendar from "./pages/Calendar";
+import Users from "./pages/Users";
 import Stock from "./pages/Stock";
 import NotFound from "./pages/NotFound";
 
