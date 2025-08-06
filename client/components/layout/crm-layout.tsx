@@ -20,6 +20,11 @@ export function CRMLayout({
   actions,
   className,
 }: CRMLayoutProps) {
+  const navigate = useNavigate();
+
+  const handleNavigate = (url: string) => {
+    navigate(url);
+  };
   return (
     <div className="flex h-screen bg-background">
       <Sidebar />
