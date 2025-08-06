@@ -394,12 +394,18 @@ export default function Projects() {
           <p className="text-muted-foreground">
             No projects found matching your criteria.
           </p>
-          <Button className="mt-4">
+          <Button className="mt-4" onClick={() => setIsNewProjectModalOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
             Create New Project
           </Button>
         </div>
       )}
+
+      <NewProjectModal
+        isOpen={isNewProjectModalOpen}
+        onClose={() => setIsNewProjectModalOpen(false)}
+        onSubmit={handleNewProject}
+      />
     </CRMLayout>
   );
 }
