@@ -42,7 +42,7 @@ export default function Index() {
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-4xl mx-auto">
         <div style={{ marginTop: 20 }}>
-          <CompanyLogo height={40} width={200} />
+          <CompanyLogo width={320} height="auto" />
         </div>
         <h1 className="text-4xl font-bold text-foreground mb-8">
           Fusion Starter App
