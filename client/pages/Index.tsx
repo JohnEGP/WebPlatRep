@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { DemoResponse, PingResponse } from "@shared/api";
+import CompanyLogo from "@/components/CompanyLogo";
 
 export default function Index() {
   const [pingData, setPingData] = useState<PingResponse | null>(null);
