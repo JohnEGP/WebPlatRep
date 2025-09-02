@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
+import CompanyLogo from "@/components/CompanyLogo";
 import {
   Calendar,
   FolderOpen,
@@ -48,20 +49,9 @@ export function Sidebar({ className }: SidebarProps) {
       <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
         <div className="flex items-center">
           {!isCollapsed ? (
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=100 100w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=200 200w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=400 400w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=800 800w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=512"
-              src="https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=512"
-              alt="Company logo"
-              className="h-8 w-auto max-w-[180px] object-contain"
-            />
+            <CompanyLogo height={32} width={180} />
           ) : (
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=512"
-              alt="Logo"
-              className="h-6 w-6 object-contain"
-            />
+            <CompanyLogo height={24} width={24} />
           )}
         </div>
         <Button
