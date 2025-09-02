@@ -4,6 +4,8 @@ import NotificationDropdown from "@/components/NotificationDropdown";
 import { Search, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { checkSupabaseHealth } from "@/lib/supabaseHealth";
 
 interface CRMLayoutProps {
   children: React.ReactNode;
