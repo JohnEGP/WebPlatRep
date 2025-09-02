@@ -46,11 +46,24 @@ export function Sidebar({ className }: SidebarProps) {
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
-        {!isCollapsed && (
-          <h1 className="text-xl font-bold text-sidebar-foreground">
-            PrintCRM
-          </h1>
-        )}
+        <div className="flex items-center">
+          {!isCollapsed ? (
+            <img
+              loading="lazy"
+              srcSet="https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=100 100w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=200 200w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=400 400w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=800 800w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=1200 1200w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=1600 1600w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61&width=2000 2000w, https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61"
+              src="https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61"
+              alt="Company logo"
+              className="h-8 w-auto max-w-[180px] object-contain"
+            />
+          ) : (
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/o/assets%2F38a994ba860d47469e4b5a1051199f61%2Fcfc22ffc6a76499382384c9d72c2a7cf?alt=media&token=26c2ede3-e87c-44fc-b6c2-b19b5390f331&apiKey=38a994ba860d47469e4b5a1051199f61"
+              alt="Logo"
+              className="h-6 w-6 object-contain"
+            />
+          )}
+        </div>
         <Button
           variant="ghost"
           size="sm"
