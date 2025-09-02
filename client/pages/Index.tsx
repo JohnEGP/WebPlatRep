@@ -40,23 +40,9 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-4xl mx-auto">
-        <img
-          loading="lazy"
-          srcSet="https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=100 100w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=200 200w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=400 400w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=800 800w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=800"
-          src="https://cdn.builder.io/api/v1/image/assets/38a994ba860d47469e4b5a1051199f61/cfc22ffc6a76499382384c9d72c2a7cf?width=800"
-          alt="Company logo"
-          style={{
-            aspectRatio: "3.72",
-            objectFit: "cover",
-            objectPosition: "center",
-            width: "100%",
-            marginTop: "20px",
-            minHeight: "20px",
-            minWidth: "20px",
-            overflow: "hidden",
-            maxWidth: "470px",
-          }}
-        />
+        <div style={{ marginTop: 20 }}>
+          <CompanyLogo height={40} width={200} />
+        </div>
         <h1 className="text-4xl font-bold text-foreground mb-8">
           Fusion Starter App
         </h1>
