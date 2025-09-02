@@ -2,8 +2,8 @@ import React from "react";
 
 interface CompanyLogoProps {
   className?: string;
-  height?: number | "auto";
-  width?: number | "auto";
+  height?: number | "auto" | string;
+  width?: number | "auto" | string;
   mode?: "inline" | "block";
   src?: string;
   alt?: string;
