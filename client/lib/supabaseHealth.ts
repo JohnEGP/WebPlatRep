@@ -5,6 +5,7 @@ export async function checkSupabaseHealth(): Promise<{
   error?: string;
 }> {
   try {
+    if (!supabase) return { ok: false, error: "Supabase not configured" };
     const { error } = await supabase.auth.getSession();
     if (error) return { ok: false, error: error.message };
     return { ok: true };
