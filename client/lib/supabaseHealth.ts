@@ -1,6 +1,9 @@
 import { supabase } from "./supabase";
 
-export async function checkSupabaseHealth(): Promise<{ ok: boolean; error?: string }>{
+export async function checkSupabaseHealth(): Promise<{
+  ok: boolean;
+  error?: string;
+}> {
   try {
     const { error } = await supabase.auth.getSession();
     if (error) return { ok: false, error: error.message };

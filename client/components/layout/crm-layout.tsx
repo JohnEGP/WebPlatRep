@@ -82,7 +82,11 @@ export function CRMLayout({
                 )}
                 title="Supabase connection"
               >
-                {supabaseOk === null ? "Supabase: …" : supabaseOk ? "Supabase: Connected" : "Supabase: Error"}
+                {supabaseOk === null
+                  ? "Supabase: …"
+                  : supabaseOk
+                    ? "Supabase: Connected"
+                    : "Supabase: Error"}
               </span>
 
               {/* Notifications */}
