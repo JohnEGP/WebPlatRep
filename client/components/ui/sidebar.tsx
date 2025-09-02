@@ -49,9 +49,9 @@ export function Sidebar({ className }: SidebarProps) {
       <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
         <div className="flex items-center">
           {!isCollapsed ? (
-            <CompanyLogo height={32} width={180} />
+            <CompanyLogo width={180} height="auto" />
           ) : (
-            <CompanyLogo height={24} width={24} />
+            <CompanyLogo width={120} height="auto" />
           )}
         </div>
         <Button
